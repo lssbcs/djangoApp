@@ -32,5 +32,5 @@ jobs:
       # https://nose.readthedocs.io
       - run:
           name: run tests
-          command: python djangoApp/manage.py test polls
+          command: pipenv run python djangoApp/manage.py test polls
           
