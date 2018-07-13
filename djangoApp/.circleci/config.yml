@@ -8,7 +8,7 @@ jobs:
     docker:
       # specify the version you desire here
       # use `-browsers` prefix for selenium tests, e.g. `3.6.1-browsers`
-      - image: circleci/python:3.7.0
+      - image: circleci/python:3.7
       
       # Specify service dependencies here if necessary
       # CircleCI maintains a library of pre-built images
@@ -22,8 +22,7 @@ jobs:
 
       - run:
           name: install dependencies
-          command: |
-            sudo pip install pipenv django
+          command: sudo pip install pipenv django
 
       # run tests!
       # this example uses Django's built-in test-runner
@@ -32,5 +31,5 @@ jobs:
       # https://nose.readthedocs.io
       - run:
           name: run tests
-          command: pipenv run python djangoApp/manage.py test polls
-          
+          command:  cd djangoApp 
+                    pipenv run python manage.py test polls
